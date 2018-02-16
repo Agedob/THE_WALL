@@ -7,6 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p style="color: rgb(152, 0, 147)">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <h3>Login Form</h3>
+    <form action='/check', method='POST'>
+        <label for="First_Name">First Name:<input type="text" name="Fname"></label>
+        <label for="Last_Name">Last Name:<input type="text" name="Lname"></label>
+        <label for="Email">Email:<input type="email" name="email"></label>
+        <label for="Password">Password:<input type="password" name="password_1"></label>
+        <label for="CPassword">Password Comformation:<input type="password" name="password_2"></label>
+        <input type="submit" value="Sign Up">
+      </form>
 </body>
 </html>
